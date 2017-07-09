@@ -12,4 +12,11 @@ public class StoreFactory {
         file.deleteOnExit();
         return Store.of(klass).from(file.getCanonicalPath());
     }
+    
+    public static void main(String[] args) throws IOException {
+    	File file = File.createTempFile("java-dirty-", ".db");
+    	file.deleteOnExit();
+    	System.out.println(file.getAbsolutePath());
+    	System.out.println(file.getCanonicalPath());
+	}
 }
