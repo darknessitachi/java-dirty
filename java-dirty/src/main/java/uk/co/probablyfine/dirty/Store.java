@@ -1,7 +1,9 @@
 package uk.co.probablyfine.dirty;
 
-import uk.co.probablyfine.dirty.utils.Classes;
-import uk.co.probablyfine.dirty.utils.Types;
+import static java.util.Optional.ofNullable;
+import static uk.co.probablyfine.dirty.utils.Exceptions.unchecked;
+import static uk.co.probablyfine.dirty.utils.Nio.fileChannel;
+import static uk.co.probablyfine.dirty.utils.Nio.mapFile;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -17,11 +19,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static java.lang.Math.abs;
-import static java.util.Optional.ofNullable;
-import static uk.co.probablyfine.dirty.utils.Exceptions.unchecked;
-import static uk.co.probablyfine.dirty.utils.Nio.fileChannel;
-import static uk.co.probablyfine.dirty.utils.Nio.mapFile;
+import uk.co.probablyfine.dirty.utils.Classes;
+import uk.co.probablyfine.dirty.utils.Types;
 
 public class Store<T> {
 
